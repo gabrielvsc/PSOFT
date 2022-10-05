@@ -1,18 +1,15 @@
+import java.nio.file.FileAlreadyExistsException;
 import java.util.Calendar;
 import java.util.Date;
 
 public class Main {
 
     public static void main(String[] args) {
-        Produto bicicleta = new Produto("Home Bike","Monark",1945.00);
-        Lote loteBicicleta = new Lote(4, new Date(2025, Calendar.JANUARY, 12), bicicleta);
+        Services sv = new Services();
+        ProdutoRepository pr = new ProdutoRepository();
+        LoteRepository lr = new LoteRepository();
 
-        System.out.println(bicicleta.getNomeDoProduto());
-        System.out.println(bicicleta.getFabricanteDoProduto());
-        System.out.println(bicicleta.getPrecoDoProduto());
-
-        System.out.println(loteBicicleta.getQuantidadeDeLotes());
-        System.out.println(loteBicicleta.getDataValidadeLote());
-        System.out.println(loteBicicleta.getProdutoDoLote());
+        sv.criarProduto(99,"Home Bike", "Monark", 1945.00);
+        sv.criarLote(20,4, new Date("22-12-2002"), sv.getProduto(99, pr));
     }
 }

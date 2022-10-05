@@ -1,18 +1,24 @@
 import java.util.Date;
 
 public class Lote {
-    private final int quantidadeDeLotes;
+
+    private final int idLote;
+    private final int quantidadeDeProdutos;
     private final Date dataValidadeLote;
     private final Produto produtoDoLote;
 
-    public Lote(int quantidade, Date dataValidade, Produto produto) {
-        this.quantidadeDeLotes = quantidade;
+    public Lote(int id, int quantidade, Date dataValidade, Produto produto) {
+        this.idLote = id;
+        this.quantidadeDeProdutos = quantidade;
         this.dataValidadeLote = dataValidade;
         this.produtoDoLote = produto;
     }
 
+    public int getIdLote() {
+        return idLote;
+    }
     public int getQuantidadeDeLotes() {
-        return quantidadeDeLotes;
+        return quantidadeDeProdutos;
     }
 
     public Date getDataValidadeLote() {

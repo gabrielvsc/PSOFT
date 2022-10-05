@@ -1,6 +1,7 @@
 public class ProdutoRepository {
 
-    public ProdutoRepository() {
+    private Produto produto;
+    public ProdutoRepository(Produto produto) {
 
     }
 }

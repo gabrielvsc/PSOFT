@@ -2,21 +2,21 @@ import java.util.Date;
 
 public class Services implements Facade {
 
+    public Services() {
+    }
     @Override
-    public void criarProduto(String nome, String fabricante, double preco) {
-        Produto novoProduto = new Produto(nome, fabricante, preco);
+    public void criarProduto(int id, String nome, String fabricante, double preco) {
+        Produto novoProduto = new Produto(id, nome, fabricante, preco);
     }
 
     @Override
-    public void criarLote(int quantidade, Date dataValidade, Produto produto) {
-        Lote novoLote = new Lote(quantidade, dataValidade, produto);
+    public void criarLote(int id, int quantidade, Date dataValidade, Produto produto) {
+        Lote novoLote = new Lote(id, quantidade, dataValidade, produto);
     }
 
     @Override
     public String listarProdutos() {
         String listaProdutos = "";
-
-
 
         return listaProdutos;
     }
@@ -28,4 +28,10 @@ public class Services implements Facade {
 
         return listaLotes;
     }
+
+    @Override
+    public Produto getProduto(int id, ProdutoRepository repository) {
+        return null;
+    }
+
 }
